@@ -32,7 +32,8 @@
   },
   "files": [
     "dist/**/*",
-    "example/**/*"
+    "example/**/*",
+    ".npmignore"
   ],
   "dependencies": {
     "d3-array": "^2.4.0",
