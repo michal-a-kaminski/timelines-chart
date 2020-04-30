@@ -77,8 +77,9 @@ myChart
 | <b>onLabelClick</b>([<i>function</i>]) | Getter/setter for the callback function for clicking on the Y axis labels. Callback will include the clicked label (if applicable) and group parameter: `onLabelClick(<string>, <string>)`. | `null` |
 | <b>onSegmentClick</b>([<i>function</i>]) | Getter/setter for the callback function for clicking on a segment. Callback will return a segment object: `onSegmentClick(segment)`. | `null` |
 | <b>segmentTooltipContent</b>([<i>function</i>]) | Getter/setter for the callback function to populate a custom tooltip for segments. The segment data point is provided as sole argument: `segmentTooltipContent(d)`. Supports plain text or HTML content. | `null` |
+| <b>interfaceTexts</b>([<i>`[string, string, string, string]`</i>]) | default : {resetZoom: 'Reset Zoom', from: 'From: ', to: 'To: ', zoomInfo: 'click-drag to zoom in' }  |
 | <b>refresh</b>() | Rerenders chart. | - |
-
+  
 ## Data syntax
 
 ```

@@ -1,5 +1,4 @@
 .timelines-chart {
-
   text-align: center;
 
   /* Cancel selection interaction */
@@ -11,7 +10,8 @@
   user-select: none;
 
   .axises {
-    line, path {
+    line,
+    path {
       stroke: #808080;
     }
 
@@ -20,15 +20,17 @@
     }
 
     .x-grid line {
-      stroke: #D3D3D3;
+      stroke: #d3d3d3;
     }
 
-    .y-axis, .grp-axis {
-      line, path {
+    .y-axis,
+    .grp-axis {
+      line,
+      path {
         stroke: none;
       }
       text {
-        fill: #2F4F4F;
+        fill: #2f4f4f;
       }
     }
   }
@@ -49,7 +51,8 @@
     stroke: none;
   }
 
-  .series-group, .series-segment {
+  .series-group,
+  .series-segment {
     cursor: crosshair;
   }
 
@@ -64,7 +67,7 @@
   .reset-zoom-btn {
     font-family: sans-serif;
     fill: blue;
-    opacity: .6;
+    opacity: 0.6;
     cursor: pointer;
   }
 }
@@ -83,13 +86,15 @@
   }
 
   .grid {
-    line, path {
+    line,
+    path {
       stroke: #fff;
     }
   }
 }
 
-.chart-zoom-selection, .brusher .brush .selection {
+.chart-zoom-selection,
+.brusher .brush .selection {
   stroke: blue;
   stroke-opacity: 0.6;
   fill: blue;
@@ -99,7 +104,7 @@
 
 .chart-tooltip {
   color: #eee;
-  background: rgba(0,0,140,0.85);
+  background: rgba(0, 0, 140, 0.85);
   padding: 5px;
   border-radius: 3px;
   font: 11px sans-serif;
@@ -113,11 +118,12 @@
     font-size: 13px;
   }
 
-  &.group-tooltip, &.line-tooltip {
+  &.group-tooltip,
+  &.line-tooltip {
     font-weight: bold;
   }
 
   &.segment-tooltip {
-     text-align: center;
+    text-align: center;
   }
 }

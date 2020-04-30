@@ -102,7 +102,7 @@ export interface TimelinesChartGenericInstance<ChainableInstance> {
     val: Val,
     timeRange: Range<TS>
   }) => void): ChainableInstance;
-
+  interfaceTexts(resetZoom: string, from: string, to: string, zoomInfo: string): ChainableInstance
   refresh(): ChainableInstance;
 }
 

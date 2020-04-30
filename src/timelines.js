@@ -149,7 +149,8 @@ export default Kapsule({
     // Callbacks
     onZoom: {}, // When user zooms in / resets zoom. Returns ([startX, endX], [startY, endY])
     onLabelClick: {}, // When user clicks on a group or y label. Returns (group) or (label, group) respectively
-    onSegmentClick: {} // When user clicks on a segment. Returns (segment object) respectively
+    onSegmentClick: {}, // When user clicks on a segment. Returns (segment object) respectively
+    interfaceTexts: { default : {resetZoom: 'Reset Zoom', from: 'From: ', to: 'To: ', zoomInfo: 'click-drag to zoom in' }}
   },
 
   methods: {
@@ -495,8 +496,8 @@ export default Kapsule({
           const dateFormat = (state.useUtc ? d3UtcFormat : d3TimeFormat)(`${state.timeFormat}${state.useUtc?' (UTC)':''}`);
           return '<strong>' + d.labelVal + ' </strong>' + state.zDataLabel
             + (normVal?' (<strong>' + Math.round((d.val-state.zColorScale.domain()[0])/normVal*100*100)/100 + '%</strong>)':'') + '<br>'
-            + '<strong>From: </strong>' + dateFormat(d.timeRange[0]) + '<br>'
-            + '<strong>To: </strong>' + dateFormat(d.timeRange[1]);
+            + '<strong>'+ interfaceTexts.from +'</strong>' + dateFormat(d.timeRange[0]) + '<br>'
+            + '<strong>'+ interfaceTexts.to +'</strong>' + dateFormat(d.timeRange[1]);
         });
 
       state.svg.call(state.segmentTooltip);
@@ -576,7 +577,7 @@ export default Kapsule({
 
       state.resetBtn = state.svg.append('text')
         .attr('class', 'reset-zoom-btn')
-        .text('Reset Zoom')
+        .text(interfaceTexts.resetZoom)
         .style('text-anchor', 'end')
         .on('mouseup' , function() {
           state.svg.dispatch('resetZoom');
@@ -935,7 +936,7 @@ export default Kapsule({
         .on('mouseout', state.groupTooltip.hide);
 
       newGroups.append('title')
-        .text('click-drag to zoom in');
+        .text(interfaceTexts.zoomInfo);
 
       groups = groups.merge(newGroups);
 
