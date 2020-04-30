@@ -20,10 +20,10 @@
   "main": "dist/timelines-chart.common.js",
   "module": "dist/timelines-chart.module.js",
   "types": "dist/timelines-chart.d.ts",
-  "homepage": "https://github.com/vasturiano/timelines-chart",
+  "homepage": "https://github.com/michal-a-kaminski/timelines-chart",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vasturiano/timelines-chart.git"
+    "url": "https://github.com/michal-a-kaminski/timelines-chart.git"
   },
   "scripts": {
     "build": "rimraf dist && rollup -c",
