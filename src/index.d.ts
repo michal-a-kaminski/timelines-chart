@@ -106,7 +106,7 @@ export interface TimelinesChartGenericInstance<ChainableInstance> {
   refresh(): ChainableInstance;
 }
 
-export type TimelinesChartInstance = TimelinesChartGenericInstance<TimelinesChartInstance>;
+export type TimelinesChartInstance = TimelinesChartGenericInstance<any>;
 
 declare function TimelinesChart(): TimelinesChartInstance;
 
