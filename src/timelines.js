@@ -496,8 +496,8 @@ export default Kapsule({
           const dateFormat = (state.useUtc ? d3UtcFormat : d3TimeFormat)(`${state.timeFormat}${state.useUtc?' (UTC)':''}`);
           return '<strong>' + d.labelVal + ' </strong>' + state.zDataLabel
             + (normVal?' (<strong>' + Math.round((d.val-state.zColorScale.domain()[0])/normVal*100*100)/100 + '%</strong>)':'') + '<br>'
-            + '<strong>'+ interfaceTexts.from +'</strong>' + dateFormat(d.timeRange[0]) + '<br>'
-            + '<strong>'+ interfaceTexts.to +'</strong>' + dateFormat(d.timeRange[1]);
+            + '<strong>'+ state.interfaceTexts.from +'</strong>' + dateFormat(d.timeRange[0]) + '<br>'
+            + '<strong>'+ state.interfaceTexts.to +'</strong>' + dateFormat(d.timeRange[1]);
         });
 
       state.svg.call(state.segmentTooltip);
@@ -577,7 +577,7 @@ export default Kapsule({
 
       state.resetBtn = state.svg.append('text')
         .attr('class', 'reset-zoom-btn')
-        .text(interfaceTexts.resetZoom)
+        .text(state.interfaceTexts.resetZoom)
         .style('text-anchor', 'end')
         .on('mouseup' , function() {
           state.svg.dispatch('resetZoom');
@@ -936,7 +936,7 @@ export default Kapsule({
         .on('mouseout', state.groupTooltip.hide);
 
       newGroups.append('title')
-        .text(interfaceTexts.zoomInfo);
+        .text(state.interfaceTexts.zoomInfo);
 
       groups = groups.merge(newGroups);
 
