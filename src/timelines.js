@@ -150,7 +150,7 @@ export default Kapsule({
     onZoom: {}, // When user zooms in / resets zoom. Returns ([startX, endX], [startY, endY])
     onLabelClick: {}, // When user clicks on a group or y label. Returns (group) or (label, group) respectively
     onSegmentClick: {}, // When user clicks on a segment. Returns (segment object) respectively
-    interfaceTexts: { default : {resetZoom: 'Reset Zoom', from: 'From: ', to: 'To: ', zoomInfo: 'click-drag to zoom in' }}
+    interfaceTexts: { default : {resetZoom: 'Cofnij przybliżenie', from: 'From: ', to: 'To: ', zoomInfo: 'click-drag to zoom in' }}
   },
 
   methods: {
