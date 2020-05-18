@@ -740,7 +740,7 @@ export default Kapsule({
         .attr('width', state.width)
         .attr('height', state.height);
 
-      state.graph.attr('transform', 'translate(' + state.leftMargin + ',' + state.topMargin + 10 + ')');
+      state.graph.attr('transform', 'translate(' + state.leftMargin + ',' + state.topMargin + ')');
 
       if (state.overviewArea) {
         state.overviewArea
