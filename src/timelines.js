@@ -740,7 +740,7 @@ export default Kapsule({
         .attr('width', state.width)
         .attr('height', state.height);
 
-      state.graph.attr('transform', 'translate(' + state.leftMargin + ',' + state.topMargin + ')');
+      state.graph.attr('transform', 'translate(' + state.leftMargin + ',' + state.topMargin + 10 + ')');
 
       if (state.overviewArea) {
         state.overviewArea
@@ -791,7 +791,7 @@ export default Kapsule({
     function adjustLegend() {
       state.svg.select('.legendG')
         .transition().duration(state.transDuration)
-          .attr('transform', `translate(${state.graphW/2},2)`);
+          .attr('transform', `translate(${state.leftMargin},0)`);
 
       state.colorLegend
         .width(Math.max(300, state.graphW/2 * (state.zQualitative?2:1)))
@@ -802,7 +802,7 @@ export default Kapsule({
       state.resetBtn
         .transition().duration(state.transDuration)
           .attr('x', state.leftMargin + state.graphW*.99)
-          .attr('y', state.topMargin);
+          .attr('y', state.topMargin + 10);
 
       TextFitToBox()
         .bbox({
@@ -815,7 +815,7 @@ export default Kapsule({
     function renderAxises() {
 
       state.svg.select('.axises')
-        .attr('transform', 'translate(' + state.leftMargin + ',' + state.topMargin + ')');
+        .attr('transform', 'translate(' + state.leftMargin + ',' + state.topMargin + 10 + ')');
 
       // X
       const nXTicks = Math.max(2, Math.min(12, Math.round(state.graphW * 0.012)));
