@@ -874,7 +874,6 @@ export default Kapsule({
       let maxChars = Math.ceil(state.rightMargin/(fontSize/Math.sqrt(2)));
 
       state.yAxis.tickValues(tickVals);
-      console.log(tickVals);
       state.yAxis.tickFormat(d => reduceLabel(d.split('+&+')[1], maxChars));
       state.svg.select('g.y-axis')
         .transition().duration(state.transDuration)
