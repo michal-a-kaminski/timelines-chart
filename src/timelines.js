@@ -578,7 +578,6 @@ export default Kapsule({
       state.resetBtn = state.svg.append('text')
         .attr('class', 'reset-zoom-btn')
         .text(state.interfaceTexts.resetZoom)
-        .style('text-anchor', 'end')
         .on('mouseup' , function() {
           state.svg.dispatch('resetZoom');
         })
@@ -795,7 +794,7 @@ export default Kapsule({
           .attr('transform', `translate(${state.leftMargin + state.graphW*0.05},2)`);
 
       state.colorLegend
-        .width(Math.max(140, state.graphW/3 * (state.zQualitative?2:1)))
+        .width(Math.max(180, state.graphW/3 * (state.zQualitative?2:1)))
         .height(state.topMargin*.8)
         .scale(state.zColorScale)
         .label(state.zScaleLabel);
