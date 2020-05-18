@@ -740,7 +740,7 @@ export default Kapsule({
         .attr('width', state.width)
         .attr('height', state.height);
 
-      state.graph.attr('transform', 'translate(' + state.leftMargin + ',' + state.topMargin + ')');
+      state.graph.attr('transform', 'translate(' + state.leftMargin + ',' + (state.topMargin + 10) + ')');
 
       if (state.overviewArea) {
         state.overviewArea
@@ -795,7 +795,7 @@ export default Kapsule({
 
       state.colorLegend
         .width(Math.max(300, state.graphW/2 * (state.zQualitative?2:1)))
-        .height(state.topMargin*.8)
+        .height(state.topMargin*.6)
         .scale(state.zColorScale)
         .label(state.zScaleLabel);
 
@@ -815,7 +815,7 @@ export default Kapsule({
     function renderAxises() {
 
       state.svg.select('.axises')
-        .attr('transform', 'translate(' + state.leftMargin + ',' + state.topMargin + 10 + ')');
+        .attr('transform', 'translate(' + state.leftMargin + ',' +  (state.topMargin + 10) + ')');
 
       // X
       const nXTicks = Math.max(2, Math.min(12, Math.round(state.graphW * 0.012)));
