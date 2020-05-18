@@ -99,7 +99,7 @@ export default Kapsule({
     maxLineHeight: { default: 12 },
     leftMargin: { default: 90 },
     rightMargin: { default: 100 },
-    topMargin: {default: 26 },
+    topMargin: {default: 40 },
     bottomMargin: {default: 30 },
     useUtc: { default: false },
     xTickFormat: {},
@@ -791,7 +791,7 @@ export default Kapsule({
     function adjustLegend() {
       state.svg.select('.legendG')
         .transition().duration(state.transDuration)
-          .attr('transform', `translate(${state.leftMargin + state.graphW*0.05},2)`);
+          .attr('transform', `translate(${state.graphW*0.05},2)`);
 
       state.colorLegend
         .width(Math.max(300, state.graphW/2 * (state.zQualitative?2:1)))
