@@ -874,8 +874,8 @@ export default Kapsule({
       let maxChars = Math.ceil(state.rightMargin/(fontSize/Math.sqrt(2)));
 
       state.yAxis.tickValues(tickVals);
-      state.yAxis.tickFormat(d => {console.log(d);
-         reduceLabel(d.split('+&+')[1], maxChars)});
+      console.log(tickVals);
+      state.yAxis.tickFormat(d => reduceLabel(d.split('+&+')[1], maxChars));
       state.svg.select('g.y-axis')
         .transition().duration(state.transDuration)
           .attr('transform', 'translate(' + state.graphW + ', 0)')
@@ -889,11 +889,7 @@ export default Kapsule({
       fontSize = Math.min(14, minHeight*fontVerticalMargin*Math.sqrt(2));
       maxChars = Math.floor(state.leftMargin/(fontSize/Math.sqrt(2)));
 
-      state.grpAxis.tickFormat(d => {
-        console.log(d);
-        reduceLabel(d, maxChars)
-      })
-        ;
+      state.grpAxis.tickFormat(d => reduceLabel(d, maxChars));
       state.svg.select('g.grp-axis')
         .transition().duration(state.transDuration)
         .style('font-size', fontSize + 'px')
