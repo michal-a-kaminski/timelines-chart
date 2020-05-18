@@ -791,7 +791,7 @@ export default Kapsule({
     function adjustLegend() {
       state.svg.select('.legendG')
         .transition().duration(state.transDuration)
-          .attr('transform', `translate(${state.leftMargin},0)`);
+          .attr('transform', `translate(${state.leftMargin},5)`);
 
       state.colorLegend
         .width(Math.max(300, state.graphW/2 * (state.zQualitative?2:1)))
@@ -802,7 +802,7 @@ export default Kapsule({
       state.resetBtn
         .transition().duration(state.transDuration)
           .attr('x', state.leftMargin + state.graphW*.99)
-          .attr('y', state.topMargin + 10);
+          .attr('y', state.topMargin + 5);
 
       TextFitToBox()
         .bbox({
