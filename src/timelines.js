@@ -759,7 +759,7 @@ export default Kapsule({
         .clamp(true);
 
       if (state.overviewArea) {
-        console.log(762);
+        console.log(762 + state.tickFormat);
         state.overviewArea
           .scale(state.xScale.copy())
           .tickFormat(state.xTickFormat);
@@ -820,7 +820,7 @@ export default Kapsule({
 
       // X
       const nXTicks = Math.max(2, Math.min(12, Math.round(state.graphW * 0.012)));
-      console.log(823);
+      console.log(823 + state.xTickFormat);
       state.xAxis
         .scale(state.xScale)
         .ticks(nXTicks)
