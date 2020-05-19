@@ -760,7 +760,7 @@ export default Kapsule({
 
       if (state.overviewArea) {
         console.log(762)
-        console.log(state.xtTickFormat);
+        console.log(state.xTickFormat);
         state.overviewArea
           .scale(state.xScale.copy())
           .tickFormat(state.xTickFormat);
